@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<style>
+html {
+    font-family: sans-serif;
+}
+body{
+    background-color: rgb(48, 48, 48);
+    color: rgba(255, 255, 255, 1);
+}
+h1 {
+    background-color: #0097a7;
+    color: #303030;
+}
+.intro {
+    background-color: #303030;
+    color: rgba(255, 255, 255, 1);
+}
+/* Make button default styling suck less */
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+/* End of button styling normalization */
+button {
+    background-color: #ff4081;
+    color: #303030;
+}
+button:hover,
+button:focus {
+    background: #d13368;
+}
+</style>
+</head>
+<body>
+    <header></header>
+    <section>
+        <main>
+            <h1>Index Content Reached</h1>
+            <section class="">
+                Simply some colorful page content to represent a fully deployed static SPA app.
+                <button class="flat">This Button Does Nothing</button>
+            </section>
+        </main>
+    </section>
+</body>
