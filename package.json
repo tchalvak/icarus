@@ -4,7 +4,7 @@
   "description": "Codename Icarus: APIGateway auto-deployment",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/tchalvak/icarus/issues"
   },
-  "homepage": "https://github.com/tchalvak/icarus#readme"
+  "homepage": "https://github.com/tchalvak/icarus#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
