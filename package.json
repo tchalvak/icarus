@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "format": "prettier --write \"src/**/*.js\"",
     "become-serverless": "export AWS_PROFILE='serverless' && export AWS_REGION=us-east-1",
     "curl-demo": "./src/util/curl-demo.sh"
   },
@@ -23,7 +24,14 @@
   },
   "homepage": "https://github.com/tchalvak/icarus#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@babel/core": "^7.2.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.0.0",
+    "babel-preset-gatsby": "^0.1.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "prettier": "1.16.1",
+    "react-test-renderer": "^16.7.0"
   },
   "dependencies": {
     "fetch-ponyfill": "^6.0.2",
