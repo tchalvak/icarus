@@ -9,5 +9,5 @@ functions:
     handler: handler.query
     events:
       - http: # http object contents have to be indented two tabstops below
-          path: query # This has
+          path: query
           method: get

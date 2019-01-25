@@ -1,7 +1,6 @@
 /*
-Set up a graphql with schema
+A graphql schema
 */
-
 const {
   graphql,
   GraphQLSchema,
@@ -10,7 +9,6 @@ const {
   GraphQLNonNull
 } = require('graphql')
 
-// A simple hello world functionality library
 // This method just inserts the user's first name into the greeting message.
 const getGreeting = firstName => `Hello, ${firstName}.`
 
