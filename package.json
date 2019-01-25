@@ -4,7 +4,9 @@
   "description": "Codename Icarus: APIGateway auto-deployment",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "become-serverless": "export AWS_PROFILE='serverless' && export AWS_REGION=us-east-1",
+    "curl-demo": ""
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,9 @@
   "homepage": "https://github.com/tchalvak/icarus#readme",
   "devDependencies": {
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "fetch-ponyfill": "^6.0.2",
+    "graphql": "^14.1.1"
   }
 }

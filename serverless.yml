@@ -1,0 +1,13 @@
+service: icarus
+provider:
+  name: aws
+  runtime: nodejs6.10 #update this when I have something running
+  stage: dev
+  profile: serverless
+functions:
+  query:
+    handler: handler.query
+    events:
+      - http: # http object contents have to be indented two tabstops below
+          path: query # This has
+          method: get

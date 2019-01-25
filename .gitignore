@@ -1,3 +1,9 @@
+# Serverless and private credentials
+icarus.code-workspace
+node_modules/
+private/
+.serverless/
+
 # Logs
 logs
 *.log
