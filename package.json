@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "become-serverless": "export AWS_PROFILE='serverless' && export AWS_REGION=us-east-1",
-    "curl-demo": ""
+    "curl-demo": "./src/util/curl-demo.sh"
   },
   "repository": {
     "type": "git",
