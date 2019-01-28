@@ -7,4 +7,4 @@ read base
 curl -G "${base}query" --data-urlencode 'query={greeting(firstName: "Icarus")}'
 curl -I "${base}query"
 
-echo -e "/nApi endpoint is available"
+echo -e "/nApi endpoint is  if the above x-amz-errortype is ok"

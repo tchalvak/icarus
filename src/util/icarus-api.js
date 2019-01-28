@@ -10,21 +10,27 @@ const headersSet = {
   'Content-Type': 'application/json',
   'User-Key': UserKey,
   'Project-Key': projectKey,
-  Token: token,
+  //token: token,
 }
 
-const getHello = () => {
+// Simply give a hello response back, hardcoded as icarus
+export const getHello = () => {
   const icarusPayload = `{greeting(firstName: "Icarus")}`
-  fetch(`${apiBase}query?query=${encodeURIComponent(icarusPayload)}`, {
+  return fetch(`${apiBase}query?query=${encodeURIComponent(icarusPayload)}`, {
     headers: headersSet,
   })
 }
 
-const getHelloData = data => fetch(`${apiBase}query`, { headers: headersSet })
+// A simple hit against the endpoint with no associated data
+export const getHelloData = data => { 
+  return fetch(`${apiBase}query?query=${encodeURIComponent(data && data.query)}`, { headers: headersSet })
+}
 
-const postHello = helloData =>
-  fetch(`${apiBase}query/`, {
+// Try posting against the endpoint as well
+export const postHello = helloData => {
+  return fetch(`${apiBase}query/`, {
     method: 'POST',
     body: helloData,
     headers: headersSet,
   })
+}
