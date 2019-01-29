@@ -1,4 +1,3 @@
-//import api from '../util/icarus-api'
 import '@babel/polyfill' // For async await
 import { getHello, postHello, getHelloData } from '../util/icarus-api.js'
 import fetchPonyfill from 'fetch-ponyfill'
