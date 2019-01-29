@@ -45,9 +45,9 @@ describe('the authentication wrapping library', () => {
     })
 
     it('invalidates a wrong username and password', () => {
-        expect(handleLogin({ username: 'username', password: 'password' })).toBe(
-            false
-        )
+        expect(
+            handleLogin({ username: 'username', password: 'password' })
+        ).toBe(false)
     })
 
     it("can get a user's empty data", () => {

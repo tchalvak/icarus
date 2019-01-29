@@ -7,6 +7,7 @@
     "test": "jest",
     "invoke": "serverless invoke -f query -l",
     "format": "prettier --write \"src/**/*.js\"",
+    "build": "npx format && echo 'No build results yet'",
     "become-serverless": "export AWS_PROFILE='icarus-serverless' && export AWS_REGION=us-east-1",
     "curl-demo": "./src/util/curl-demo.sh"
   },
