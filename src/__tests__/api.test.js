@@ -1,5 +1,5 @@
 import '@babel/polyfill' // For async await
-import { getHello, postHello, getHelloData } from '../util/icarus-api.js'
+import { getHello, postHello, getHelloData, auth } from '../util/icarus-api.js'
 import fetchPonyfill from 'fetch-ponyfill'
 const { fetch, Request, Response, Headers } = fetchPonyfill()
 
@@ -41,12 +41,23 @@ describe('Test the api wrapper and endpoints', async function() {
         })
     })
 
-    xit('accepts a posted name to the hello endpoint', async function() {
+    it('gets auth info returned', async () => {
+        const response = await auth({
+            username: 'someUsername',
+            password: 'somepass',
+        })
+        expect(response.json()).toEqual({
+            username: 'username',
+            password: 'password',
+        })
+    })
+
+    /*xit('accepts a posted name to the hello endpoint', async function() {
         const response = await postHello({
             query: `{greeting(firstName: "Icarus3")}`,
         })
         await expect(response.json()).resolves.toEqual({
             data: { greeting: 'Hello, Icarus3.' },
         })
-    })
+    })*/
 })

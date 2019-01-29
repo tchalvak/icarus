@@ -38,9 +38,25 @@ export const postHello = helloData => {
     })
 }
 
+// A mock auth promise
+export const auth = auth => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = { username: 'username', password: 'password' }
+            const response = {
+                json: () => {
+                    return data
+                },
+            }
+            resolve(response)
+        }, 300)
+    })
+}
+/*
 // Just a call to the auth query
 export const auth = auth => {
-    return fetch(`${apiBase}query?query=${encodeURIComponent(auth)}`, {
+    return fetch(`${apiBase}query?query=${encodeURIComponent({auth: auth})}`, {
         headers: headersSet,
     })
 }
+*/

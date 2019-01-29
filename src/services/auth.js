@@ -16,20 +16,23 @@ const setUser = user =>
 
 /**
  * Hit the auth endpoint
+ * @note Asynchronous!
  * @param {string} username
  * @param {string} password
+ * @return Promise with a resolve/reject to return false | string user
  */
-export const handleLogin = ({ username, password }) => {
-    const authInfo = auth({ username: username, password: password })
+export const handleLogin = ({ iusername, ipassword }) => {
+    return auth({ username: iusername, password: ipassword })
         .then(response => response.json())
         .then(authInfo => {
-            if (authInfo !== false && authInfo.username !== null) {
+            if (authInfo && authInfo.username) {
                 return setUser(authInfo)
             } else {
                 return false
             }
         })
-        .catch(() => {
+        .catch(err => {
+            console.error('Login error occurred', err)
             return false
         })
 }
@@ -50,5 +53,5 @@ export const isGapiAuthed = () => {
 // We want to wipe the locally stored data now
 export const logout = callback => {
     setUser({})
-    callback()
+    return callback()
 }
