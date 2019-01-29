@@ -37,3 +37,10 @@ export const postHello = helloData => {
     headers: headersSet,
   })
 }
+
+// Just a call to the auth query
+export const auth = (auth) => {
+  return fetch(`${apiBase}query?query=${encodeURIComponent(auth)}`, {
+    headers: headersSet,
+  })
+}
