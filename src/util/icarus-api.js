@@ -13,6 +13,14 @@ const headersSet = {
     //token: token,
 }
 
+// Run an arbitrary graphql query
+export const query = data => {
+    return fetch(
+        `${apiBase}query?query=${encodeURIComponent(data && data.query)}`,
+        { headers: headersSet }
+    )
+}
+
 // Simply give a hello response back, hardcoded as icarus
 export const getHello = () => {
     const icarusPayload = `{greeting(firstName: "Icarus")}`
