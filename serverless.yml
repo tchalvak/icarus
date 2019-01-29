@@ -1,9 +1,9 @@
 service: icarus
 provider:
   name: aws
-  runtime: nodejs6.10 #update this when I have something running
+  runtime: nodejs8.10
   stage: dev
-  profile: serverless
+  profile: icarus-serverless
 functions:
   query:
     handler: handler.query

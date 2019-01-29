@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "format": "prettier --write \"src/**/*.js\"",
-    "become-serverless": "export AWS_PROFILE='serverless' && export AWS_REGION=us-east-1",
+    "become-serverless": "export AWS_PROFILE='icarus-serverless' && export AWS_REGION=us-east-1",
     "curl-demo": "./src/util/curl-demo.sh"
   },
   "repository": {

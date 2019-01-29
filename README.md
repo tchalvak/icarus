@@ -6,7 +6,7 @@ Codename Icarus, APIGateway auto-deployment
  - Set up an IAM user for serverless with the appropriate credentials: https://serverless.com/framework/docs/providers/aws/guide/credentials/
 (you may want to back down some of the so very high credentials in that account)
  - Set up your aws-cli, I recommend setting it up with a profile specifically for serverless.
- - `aws configure --profile serverless`
+ - `aws configure --profile icarus-serverless`
 
 ## Install
 
