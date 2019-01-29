@@ -22,8 +22,11 @@ export const getHello = () => {
 }
 
 // A simple hit against the endpoint with no associated data
-export const getHelloData = data => { 
-  return fetch(`${apiBase}query?query=${encodeURIComponent(data && data.query)}`, { headers: headersSet })
+export const getHelloData = data => {
+  return fetch(
+    `${apiBase}query?query=${encodeURIComponent(data && data.query)}`,
+    { headers: headersSet }
+  )
 }
 
 // Try posting against the endpoint as well
