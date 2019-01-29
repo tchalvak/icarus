@@ -1,16 +1,14 @@
 /*
-Set up a graphql with schema
+A graphql schema
 */
-
 const {
   graphql,
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLNonNull,
+  GraphQLNonNull
 } = require('graphql')
 
-// A simple hello world functionality library
 // This method just inserts the user's first name into the greeting message.
 const getGreeting = firstName => `Hello, ${firstName}.`
 
@@ -22,25 +20,20 @@ const schema = new GraphQLSchema({
       // the query has a field called 'greeting'
       greeting: {
         // we need to know the user's name to greet them
-        args: {
-          firstName: {
-            name: 'firstName',
-            type: new GraphQLNonNull(GraphQLString),
-          },
-        },
+        args: { firstName: { name: 'firstName', type: new GraphQLNonNull(GraphQLString) } },
         // the greeting message is a string
         type: GraphQLString,
         // resolve to a greeting message
-        resolve: (parent, args) => getGreeting(args.firstName),
-      },
-    },
+        resolve: (parent, args) => getGreeting(args.firstName)
+      }
+    }
   }),
 })
 
 // We want to make a GET request with ?query=<graphql query>
 // The event properties are specific to AWS. Other providers will differ.
-module.exports.query = (event, context, callback) =>
-  graphql(schema, event.queryStringParameters.query).then(
-    result => callback(null, { statusCode: 200, body: JSON.stringify(result) }),
+module.exports.query = (event, context, callback) => graphql(schema, event.queryStringParameters.query)
+  .then(
+    result => callback(null, {statusCode: 200, body: JSON.stringify(result)}),
     err => callback(err)
   )
