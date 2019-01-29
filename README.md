@@ -18,6 +18,14 @@ Codename Icarus, APIGateway auto-deployment
 
     serverless deploy
 
+### Deploy a partial function
+
+    serverless deploy function -f query
+
+### Invoke a function
+
+    serverless invoke -f query -l
+
 ## Additional info
 
  Setting up a graphql api: https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/
