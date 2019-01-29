@@ -28,7 +28,9 @@ export const handleLogin = ({ username, password }) => {
                 return false
             }
         }
-    );
+    ).catch(() => {
+        return false
+    })
 }
 
 // Check if the user is logged in and exists at all
