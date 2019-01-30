@@ -11,7 +11,7 @@ export const getUser = () =>
         : {}
 
 // Store the user for later
-const setUser = user =>
+export const setUser = user =>
     isBrowser() && window.localStorage.setItem('authUser', JSON.stringify(user))
 
 /**

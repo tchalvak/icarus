@@ -1,5 +1,11 @@
 import '@babel/polyfill' // For async await
-import { getHello, postHello, getHelloData, auth, query } from '../util/icarus-api.js'
+import {
+    getHello,
+    postHello,
+    getHelloData,
+    auth,
+    query,
+} from '../util/icarus-api.js'
 import fetchPonyfill from 'fetch-ponyfill'
 const { fetch, Request, Response, Headers } = fetchPonyfill()
 
@@ -53,14 +59,14 @@ describe('Test the api wrapper and endpoints', async function() {
     })
 
     it('allows an arbitrary graphql query', async () => {
-      const response = await query({
-        query: `{greeting(firstName: "Query-Running-Test")}`
-      })
-      await expect(response.json()).resolves.toEqual({
-        data: {
-          greeting: 'Hello, Query-Running-Test.'
-        }
-      })
+        const response = await query({
+            query: `{greeting(firstName: "Query-Running-Test")}`,
+        })
+        await expect(response.json()).resolves.toEqual({
+            data: {
+                greeting: 'Hello, Query-Running-Test.',
+            },
+        })
     })
 
     /*xit('accepts a posted name to the hello endpoint', async function() {

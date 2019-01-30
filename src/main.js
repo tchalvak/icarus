@@ -1,3 +1,5 @@
+import nopony from 'fetch-ponyfill'
+const { fetch } = nopony
 import {
     handleLogin,
     isBrowser,
@@ -6,8 +8,8 @@ import {
     isLoggedIn,
     isGapiAuthed,
     logout,
-} from '../services/auth.js'
-import { query } from './utils/icarus-api.js' // Api wrapper
+} from './services/auth.js'
+import { query } from './util/icarus-api.js' // Api wrapper
 
 // Export an api to use these functions
 export default {
